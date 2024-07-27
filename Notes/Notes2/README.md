@@ -23,6 +23,32 @@ and both files will automatically install all the dependencies in the node_modul
         3. Versioning issues
     <br><br>
 
-12. 
+12. If we directly import **React** and **React-DOM** in our **App.js** than we see that there will be an error on the browser that says ***Browser Scripts cannot have imports or exports***. This error is thrown because we **React** is not a Browser script and we are directly injecting it by doing <script src="./App.js"></script> <br><br>
+13. So to remove it , we have to add another tag called type="module" in the script tag and it works perfectly.<br><br>
+14. parcel
+
+    - Dev Build
+    - Creates Local servers
+    - HMR => Hot Module Replacement
+    - HMR is achived through File watching Algoritm (written in C++)
+    - Caching - Faster build (in .parcel-cache)
+    - Image optimization
+    = Minification
+    - Bundling
+    - Compress
+    - Consistent Hashing
+    - Code Splitting
+    - Differential Bundling -> Support older browser
+    - Diagonstic
+    - Error handling
+    - https
+    - Tree shaking - removes unused code
+    - Different dev and prod bundles
+<br><br>
+15. When we do prod build , it builds the compressed prod build files in .dist folder and
+those files can be pushed on to the production server.<br><br>
+
+16. If we build our app using **npx parcel build index.html** ,we will run into an error and that error would be due to declaration of **"main"** in the package.json and we have to remove it to make the app suitable for build.<br><br>
+17. When we just build the project , npx and npm makes the minified and that devevlopment build is then rendered in the browser and that is stored in the **dist** folder generated and this folder and files under it are generated automatically by parcel , even if we delete them.
 
    
