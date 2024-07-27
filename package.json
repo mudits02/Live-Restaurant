@@ -1,0 +1,22 @@
+{
+  "name": "swiggy_frontend",
+  "version": "1.0.0",
+  "description": "Swiggy Frontend with live API",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/mudits02/Live-Restaurant.git)"
+  },
+  "keywords": [
+    "React",
+    "Learning"
+  ],
+  "author": "mudits02",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
