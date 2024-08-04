@@ -142,3 +142,7 @@
         transform: translateX(100%);
     }
 }
+
+.search{
+    display: flex;
+}
