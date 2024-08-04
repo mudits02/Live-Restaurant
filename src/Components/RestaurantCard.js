@@ -5,7 +5,7 @@ const RestaurantCard = (props) => {
     const {resData} = props;
 
     //Destructuring of Objects in Javascript , ? is optional chaining
-    const {name , cuisines , deliveryTime , lastMileTravel , cloudinaryImageId} = resData?.data;
+    const {name , cuisines , deliveryTime , lastMileTravel , cloudinaryImageId} = resData?.info;
 
     const styleCard = {
         backgroundColor : "#f0f0f0",
