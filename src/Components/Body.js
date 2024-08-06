@@ -50,8 +50,7 @@ const Body = () => {
                     onClick={() => {
                         const filteredList = ListofRestaurants.filter((res) => res.info.avgRating > 4.0);
                         setSeachRestaurntList(filteredList);
-                    }}
-                >
+                }}>
                     Top Rated Restaurant
                 </button>
             </div>
