@@ -92,3 +92,4 @@ Now in this , Whenever we hit any route , **Outlet** replaces itself with the ma
 
 1. **Client-Side Routing** -> When we do routing of endpoints from the client side(basically using **Link**). We do not make a network call in this.<br><br>
 2. **Server-Side Rendering** -> Routing done from the server side. We make a network call to the server and then that server in response sends the **HTML** file which needs to be rendered when we hit that particular **endpoint**.<br><br>
+3. **Link** behind the scene is basically using **anchor** tag , we can see it by loooking at the developer's console<br><br>
