@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { API_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../Hooks/useOnlineStatus";
 
 
 const Body = () => {
@@ -23,6 +24,9 @@ const Body = () => {
         setListOfRestaurants(restaurants);
         setSeachRestaurntList(restaurants);
     };
+
+    const onlineStatus = useOnlineStatus();
+    
 
     return ListofRestaurants.length === 0 ? <Shimmer /> : (
         <div className="body">
