@@ -25,7 +25,6 @@ const Body = () => {
         setSeachRestaurntList(restaurants);
     };
 
-    const onlineStatus = useOnlineStatus();
     
 
     return ListofRestaurants.length === 0 ? <Shimmer /> : (

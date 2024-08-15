@@ -9,9 +9,9 @@ import RestaurantMenu from "./Components/RestaurantMenu";
 import { createBrowserRouter , RouterProvider , Outlet } from "react-router-dom";
 
 
-const Grocery = lazy(() => {
-  import("./Components/Grocery");
-})
+const Grocery = lazy(() =>
+  import("./Components/Grocery")
+)
 
 const Applayout = () => {
     return (
@@ -45,7 +45,7 @@ const appRouter = createBrowserRouter([
 
       {
         path: "/grocery",
-        element:<Suspense fallback={<Shimmer />}> <Grocery /> </Suspense> 
+        element:<Suspense fallback={<h1>Loading...</h1>}> <Grocery /> </Suspense>
       },
 
       {
