@@ -1,3 +1,4 @@
+import UserContext from "../utils/UserContext";
 import User from "./User";
 import UserClass from "./UserClass";
 import React from "react";
@@ -35,6 +36,14 @@ class About extends React.Component{
         const {name , location , avatar_url} = this.state.userInfo;
         return (
             <div classname="about-us">
+                <div>
+                    LoggedIn User
+                    <UserContext.Consumer>
+                        {(loggedInUser) => {
+                            <h1>{loggedInUser}</h1>
+                        }} 
+                    </UserContext.Consumer>
+                </div>
                 <h1>About Us page</h1>
                 <img src={avatar_url} />
                 {/* <User name={"Mudit Shukla(from function)"} location={"gwalior from function"} /> */}

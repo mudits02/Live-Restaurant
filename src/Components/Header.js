@@ -1,11 +1,15 @@
 import logo from "../../images/download.png";
-import { useState } from "react";
+import { useState , useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../Hooks/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
     const [loginBtn, setLoginBtn] = useState("Login");
     console.log("Header Rendered");
+
+    const {loggedInUser} = useContext(UserContext);
+    console.log(loggedInUser);
 
     const onlineStatus = useOnlineStatus();
     return (

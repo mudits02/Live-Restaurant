@@ -25,3 +25,8 @@ const withPromotedLabel = (RestaurantCard) => {
 Sometimes, you want the state of two components to always change together. To do it, remove state from both of them, move it to their closest common parent, and then pass it down to them via props. This is known as lifting state up, and it’s one of the most common things you will do writing React code.<br><br>
 
 [Read more about Lifting up the state here , must read](https://react.dev/learn/sharing-state-between-components#lifting-state-up-by-example)
+
+---
+
+1. **Context** is shown from the component in which they are declared.<br><br>
+2. Whenever we are doing <UserContext.Provider value={}> </UserContext.Provider> , whichever component we wrap it up on , only in that the value of the USerContext will chnage , for example if we did around App , then in the entire app , if we did in around say **Header** component , then it only changes around the **Header** and will remain the default value in other components. <br><br>

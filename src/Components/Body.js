@@ -1,13 +1,17 @@
-import RestaurantCard , {withVegLabel} from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import RestaurantCard, { withVegLabel } from "./RestaurantCard";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { API_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
     const [ListofRestaurants, setListOfRestaurants] = useState([]);
     const [seachRestaurntList, setSeachRestaurntList] = useState([]);
     const [searchText, setSearchText] = useState("");
+    
+    // Use the context to get the loggedInUser and setUserName function
+    const { loggedInUser, setUserName } = useContext(UserContext);
 
     const RestaurantCardPromoted = withVegLabel(RestaurantCard);
 
@@ -49,6 +53,16 @@ const Body = () => {
                         Search
                     </button>
                 </div>
+
+                <div className="flex items-center justify-center mb-6">
+                    <input
+                        className="m-4 p-4 w-full max-w-md rounded-full border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 ease-in-out shadow-sm" 
+                        placeholder="Update Username" 
+                        value={loggedInUser} 
+                        onChange={(event) => setUserName(event.target.value)} 
+                    />
+                </div>
+
                 <div className="text-center">
                     <button 
                         className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full transition-transform transform hover:scale-105 shadow-lg"
