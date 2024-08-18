@@ -1,14 +1,15 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard , {withVegLabel} from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { API_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../Hooks/useOnlineStatus";
 
 const Body = () => {
     const [ListofRestaurants, setListOfRestaurants] = useState([]);
     const [seachRestaurntList, setSeachRestaurntList] = useState([]);
     const [searchText, setSearchText] = useState("");
+
+    const RestaurantCardPromoted = withVegLabel(RestaurantCard);
 
     useEffect(() => {
         fetchData();
@@ -66,7 +67,8 @@ const Body = () => {
                         to={"/restaurants/" + restaurant.info.id} 
                         className="transform transition-transform hover:scale-105"
                     >
-                        <RestaurantCard resData={restaurant} />
+                        {restaurant.info.veg ? <RestaurantCardPromoted resData={restaurant} /> : <RestaurantCard resData={restaurant} />}
+                        
                     </Link>
                 )}
             </div>
