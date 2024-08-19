@@ -13,6 +13,6 @@ In the above image , as soon as we click the Add button , an **action** is **dis
 In the above image , our header component , in this example has **Subscribed** to the slice in the **Redux** store and this is done using **Selector**. <br><br>
 
 6. The entire flow is below
-![Redux entire flow]()
+![Redux entire flow](https://github.com/mudits02/Live-Restaurant/blob/master/images/6203716402783829805.jpg)
 
 7. 
