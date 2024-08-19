@@ -15,4 +15,60 @@ In the above image , our header component , in this example has **Subscribed** t
 6. The entire flow is below
 ![Redux entire flow](https://github.com/mudits02/Live-Restaurant/blob/master/images/6203716402783829805.jpg)
 
-7. 
+---
+
+## Redux Practical
+
+1. So , **Actions** in redux act as an API , like they are used to say add , remove , clear , etc. the cart in this particular project<br><br>
+2. Inside the **addItems** , the callback function is basically our **reducer Function**
+```
+onst cardSlice = createSlice({
+    name: "cart",
+    initialState: {
+        items: []
+    },
+    reducers: {
+        addItems: (state , action) => {
+
+        }
+    }
+});
+```
+
+also , the action modifies the state on action called and the state has the access to the **items** array inside the **initialState**
+<br>
+
+3. Whenever we do a reducer action , we are mutating the **state** of the application. <br><br>
+
+4. If we want to pass some arguements inside of a **onClick()** fucntion , then we have to do like this 
+```
+onClick={(item) => handleAddItems(item)}
+```
+
+and not
+
+```
+onClick={() => handleAddItems(item)}
+```
+
+or this is also wrong
+
+```
+onClick={handleAddItems(item)}
+```
+
+<br>
+
+5. But in redux , the correct way of passing the data is
+
+```
+onClick={() => handleAddItem(item)}
+```
+
+if we dont do this , we get this error -> ***A non-serializable value was detected in an action, in the path: payload. Value: SyntheticBaseEvent*** 
+
+6. Always use **Selector** and subscribe only to the Slice u want to use and not to subscrbe with the entire store. If we subscribe to the whole Store , it gives a low efficiency. <br><br>
+7. It is literally named **Selector** because we are selecting a certain part of the store. <>br><br>
+8. In the older version of **Redux** , it was offcially not allowed to mutate the state but with the new versions , now things cannot be done without mutating the state. Nor do we have to return it.<br><br>
+9. Behind the scene , it is actually creating an Immuatable object and not letting it mutate but for the developers , we can and have to mutate the state as Redux uses **Immer** library internally to first mutate the state and then find the diff between them and then just create an **Immutatble** state for it internally. <br><br>
+10. [Read About RTK Query](https://redux-toolkit.js.org/rtk-query/overview)

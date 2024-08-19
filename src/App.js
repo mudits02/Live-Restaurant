@@ -4,11 +4,12 @@ import Header from "./Components/Header";
 import Body from "./Components/Body";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
-import Error from "./Components/Error"
+import Error from "./Components/Error";
+import Cart from "./Components/Cart"
 import RestaurantMenu from "./Components/RestaurantMenu";
 import { createBrowserRouter , RouterProvider , Outlet } from "react-router-dom";
 import Shimmer from "./Components/Shimmer";
-import appStore from "./utils/appStore";
+import appStore from "./redux_slice/appStore";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 
@@ -29,19 +30,17 @@ const Applayout = () => {
     setUserName(data.user);
   }, [])
 
-    return (
-      //Default
-      <Provider store={appStore}>
-      <UserContext.Provider value={{loggedInUser: userName , setUserName}}>
-        {/* User Name */}
+  return (
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
         <div className="app">
-            <Header />
-            <Outlet /> 
+          <Header />
+          <Outlet />
         </div>
       </UserContext.Provider>
-      </Provider>
-    )
-}
+    </Provider>
+  );
+};
 
 const appRouter = createBrowserRouter([
   {
@@ -72,6 +71,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurants/:resId", //:resId means that resId can be dynamically changed
         element: <RestaurantMenu />
+      },
+      {
+        path: "/cart",
+        element: <Cart />
       }
       
     ],
