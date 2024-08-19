@@ -7,7 +7,7 @@ const RestaurantCard = (props) => {
     const { name, cuisines, deliveryTime, lastMileTravel, cloudinaryImageId } = resData?.info;
 
     return (
-        <div className="relative m-4 p-4 w-[300px] bg-white rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl">
+        <div className="m-4 p-4 w-[300px] bg-white rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl">
             <img 
                 className="w-full h-40 object-cover rounded-t-lg"
                 alt="Restaurant Logo"
@@ -21,13 +21,6 @@ const RestaurantCard = (props) => {
                     <span>{lastMileTravel} km away</span>
                 </div>
             </div>
-            {/* Add Button */}
-            <button 
-                className="absolute bottom-4 right-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-transform transform hover:scale-105"
-                onClick={() => alert('Added!')}
-            >
-                Add
-            </button>
         </div>
     );
 }
